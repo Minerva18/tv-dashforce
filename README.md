@@ -4,6 +4,10 @@ This project showcases the art of the possible to turn any monitor/TV into a sta
 
 Built with ❤️ using Salesforce Platform Events, Lightning Web Components Open Source, Lightning Design System, JSforce, Socket.io, Chart.js, Gauge.js, CountUp.js, Node Tweet Stream.
 
+## Here is a quick demo video
+
+![TV Dashforce Demo](http://img.youtube.com/vi/quYMZ_8zOmo/0.jpg)](http://www.youtube.com/watch?v=quYMZ_8zOmo)
+
 ## Before you start
 
 Make sure you have Node.js installed on your Raspberry Pi or where would be running this.
@@ -25,7 +29,6 @@ TW_API_KEY=YOUR_TWITTER_API_KEY
 TW_API_SECRET=YOUR_TWITTER_API_SECRET
 TW_ACCESS_TOKEN=YOUR_TWITTER_ACCESS_TOKEN
 TW_ACCESS_TOKEN_SECRET=YOUR_TWITTER_ACCESS_TOKEN_SECRET
-
 
 #Open Weather Map API Key. You can get one for free from here - https://openweathermap.org/appid
 OWEATHER_API_KEY=YOUR_OPEN_WEATHER_MAP_API_KEY
