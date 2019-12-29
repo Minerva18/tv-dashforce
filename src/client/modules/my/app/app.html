@@ -1,0 +1,83 @@
+<template>
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-dashboard">
+                            <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                                <use xlink:href="/resources/assets/icons/standard-sprite/svg/symbols.svg#dashboard">
+                                </use>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span>Executive Dashboard</span>
+                                    <span class="slds-page-header__title slds-truncate"
+                                        title="Sales &amp; Service">Sales &amp; Service</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template if:true={socketReady}>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_9-of-12 slds-p-around_x-small">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                        <my-closed-business sobject="Opportunity" socket={socket}></my-closed-business>
+                    </div>
+                    <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                        <my-business-by-stage sobject="Opportunity" socket={socket}></my-business-by-stage>
+                    </div>
+                    <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                        <my-opportunities-by-stage sobject="Opportunity" socket={socket}>
+                        </my-opportunities-by-stage>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12 slds-p-around_x-small">
+                        <my-opportunity-pipeline sobject="Opportunity" socket={socket}>
+                        </my-opportunity-pipeline>
+                    </div>
+                    <div class="slds-col slds-size_3-of-12 slds-p-around_x-small">
+                        <my-open-opportunities sobject="Opportunity" socket={socket}>
+                        </my-open-opportunities>
+                    </div>
+                    <div class="slds-col slds-size_3-of-12 slds-p-around_x-small">
+                        <my-open-case-count-by-priority sobject="Case" socket={socket}>
+                        </my-open-case-count-by-priority>
+                    </div>
+                    <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                        <my-cases-by-status-and-priority sobject="Case" socket={socket}>
+                        </my-cases-by-status-and-priority>
+                    </div>
+                    <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                        <my-cases-by-channel sobject="Case" socket={socket}></my-cases-by-channel>
+                    </div>
+                    <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                        <my-cases-by-priority sobject="Case" socket={socket}></my-cases-by-priority>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_3-of-12 slds-p-around_x-small">
+                <div class="slds-m-top_x-small">
+                    <my-clock-weather-holidays city="Hyderabad" country-code="IN">
+                    </my-clock-weather-holidays>
+                </div>
+                <div class="slds-m-top_medium">
+                    <my-chatter-announcement socket={socket}>
+                    </my-chatter-announcement>
+                </div>
+                <div class="slds-m-top_medium">
+                    <my-live-twitter-feed socket={socket}></my-live-twitter-feed>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

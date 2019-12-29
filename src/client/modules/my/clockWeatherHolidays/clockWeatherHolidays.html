@@ -1,0 +1,87 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-custom-notification"
+                        title="custom_notification">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                            <use
+                                xlink:href="resources/assets/icons/standard-sprite/svg/symbols.svg#custom_notification">
+                            </use>
+                        </svg>
+                        <span class="slds-assistive-text">custom_notification</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <p class="slds-truncate slds-text-heading_small" title="Howdy, Trailblazers!">
+                            <span>Howdy, Trailblazers!</span>
+                        </p>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+
+            <div class="slds-grid slds-grid_align-spread">
+                <div class="slds-col">
+                    <div class="slds-text-heading_large">{time}</div>
+                    <div class="slds-text-heading_medium">{date}</div>
+                </div>
+                <div class="slds-col">
+                    <template if:true={currentWeather}>
+                        <img class="slds-m-right_x-small weatherIcon" src={currentWeather.iconURL}
+                            alt={currentWeather.weatherConditionName} />
+                        <div class="weather">
+                            <span class="slds-text-heading_large">{currentWeather.formattedTemp}</span>
+                            <span class="slds-text-heading_medium degreeSymbol">&deg;C</span>
+                            <p class="slds-text-align_center slds-text-color_weak weatherConditionName">
+                                {currentWeather.weatherConditionName}
+                            </p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <template if:true={currentWeather}>
+                <div class="slds-grid slds-grid_align-spread slds-m-top_small">
+                    <template for:each={weatherForecast.list} for:item="forecast">
+                        <div class="slds-col" key={forecast.dt}>
+                            <div class="slds-text-align_center">{forecast.formattedDay}</div>
+                            <img class="forecastIcon" src={forecast.iconURL} alt={forecast.weatherConditionName} />
+                            <div class="slds-text-align_center">
+                                <span class="slds-m-right_small">{forecast.formattedMaxTemp}&deg;</span>
+                                <span class="slds-text-color_weak">{forecast.formattedMinTemp}&deg;</span>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template if:true={upcomingHolidays}>
+                <div class="slds-section slds-is-open">
+                    <h3 class="slds-section__title slds-theme_shade">
+                        <span class="slds-truncate slds-p-horizontal_small" title="Upcoming Holidays This Year">
+                            Upcoming Holidays This Year
+                        </span>
+                    </h3>
+                    <div aria-hidden="false" class="slds-section__content">
+                        <template for:each={upcomingHolidays} for:item="holiday">
+                            <div class="slds-grid slds-grid_align-spread" key={holiday.date.iso}>
+                                <div class="slds-col">
+                                    {holiday.name}
+                                </div>
+                                <div class="slds-col">
+                                    {holiday.date.cFormattedDate}
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+            </template>
+
+        </div>
+    </article>
+</template>

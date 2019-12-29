@@ -1,0 +1,21 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <p class="slds-truncate slds-text-heading_small" title="Sales This Year">
+                            <span>Sales This Year</span>
+                        </p>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <!--Gauge.js uses HTML canvas element to create charts so here is one-->
+            <center><canvas style="width:84%;" class="chart" lwc:dom="manual"></canvas></center>
+            <div class="slds-text-heading_large slds-text-align_center">$<span class="gauge-value"
+                    lwc:dom="manual"></span></div>
+        </div>
+    </article>
+</template>

@@ -1,0 +1,19 @@
+.weatherIcon {
+    height: 60px;
+    object-fit: none;
+}
+.degreeSymbol {
+    vertical-align: super;
+}
+.weather {
+    vertical-align: middle;
+    display: inline-block;
+}
+.weatherConditionName {
+    line-height: 1;
+}
+.forecastIcon {
+    object-fit: cover;
+    height: 45px;
+    width: 75px;
+}

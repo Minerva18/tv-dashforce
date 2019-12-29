@@ -1,0 +1,27 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-announcement" title="announcement">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                            <use xlink:href="resources/assets/icons/standard-sprite/svg/symbols.svg#announcement"></use>
+                        </svg>
+                        <span class="slds-assistive-text">announcement</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <p class="slds-truncate slds-text-heading_small" title="Chatter Announcements">
+                            <span>Chatter Announcements</span>
+                        </p>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-text-heading_large">{announcementMessage}</div>
+            <div class="slds-text-color_weak slds-m-top_xx-small">{dateTime}</div>
+        </div>
+    </article>
+</template>
