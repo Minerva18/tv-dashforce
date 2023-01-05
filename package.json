@@ -10,7 +10,7 @@
         "dotenv": "^8.2.0",
         "gaugeJS": "^1.3.7",
         "jsforce": "^1.9.3",
-        "lwc-services": "^1.3.12",
+        "lwc-services": "^3.2.2",
         "node-tweet-stream": "^2.0.3",
         "socket.io": "^2.3.0",
         "timeago.js": "^4.0.1"
